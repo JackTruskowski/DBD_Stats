@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C858073B-6EAC-48A6-B61A-1662C974D7BF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DBDStats</RootNamespace>
+    <AssemblyName>DBDStats</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="XamlAnimatedGif, Version=1.1.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XamlAnimatedGif.1.1.10\lib\net45\XamlAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Greetings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="KillerStats.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Stats.cs" />
+    <Compile Include="Greetings.xaml.cs">
+      <DependentUpon>Greetings.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\backgrounds\banner_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\storeBackground_DO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\swamp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\storeBackground_FK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\storeBackground_HB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\help_levelIcon_killer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\iconPerks_brutalStrength.png" />
+    <Resource Include="Resources\iconPerks_noOneEscapesDeath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Layer 0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\auricCellPack_03.png" />
+    <Resource Include="Resources\auricCellPack_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bkg_scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dirt-texture-png-13.png" />
+    <Resource Include="Resources\Up-Arrow-PNG-Picture.png" />
+    <Resource Include="Resources\loading_spinner.gif" />
+    <Resource Include="Loading_icon.gif" />
+    <Content Include="Resources\backgrounds\banner_1.png" />
+    <Resource Include="Resources\iconAddon_woodenHorse.png" />
+    <Resource Include="Resources\eventObjective_burntCoins.png" />
+    <Resource Include="Resources\eventObjective_summer18_survivor.png" />
+    <Resource Include="Resources\categoryIcon_weapons.png" />
+    <Resource Include="Resources\backgrounds\banner_2.png" />
+    <Resource Include="Resources\backgrounds\banner_3.png" />
+    <Resource Include="Resources\backgrounds\banner_4.png" />
+    <Resource Include="Resources\backgrounds\banner_5.png" />
+    <Resource Include="Resources\backgrounds\banner_7.png" />
+    <Resource Include="Resources\backgrounds\banner_8.png" />
+    <Resource Include="Resources\backgrounds\banner_0.png" />
+    <Resource Include="Resources\storeBanner_curtainCallChapter.png" />
+    <Resource Include="Resources\storeBanner_grim_matsuri.png" />
+    <Resource Include="Resources\storeBanner_hallowed_blight.png" />
+    <Resource Include="Resources\storeBanner_hallowed_blight_vigo.png" />
+    <Resource Include="Resources\storeBanner_metal_trapper.png" />
+    <Resource Include="Resources\storeBanner_santa_clown.png" />
+    <Resource Include="Resources\storeBanner_shattered_bloodline.png" />
+    <Resource Include="Resources\storeBanner_summer_kate.png" />
+    <Resource Include="Resources\storeBanner_ugly_sweaters.png" />
+    <Resource Include="Resources\storeBanner_urban.png" />
+    <Resource Include="Resources\storeBanner_vicious_victorian.png" />
+    <Resource Include="Resources\storeBanner_wickedwares.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
