@@ -129,10 +129,13 @@ namespace DBDStats
             }
         }
 
-
+        /// <summary>
+        /// Track when was the last log file has been read
+        /// </summary>
+        public DateTime newestFileRead = DateTime.MinValue;
         public void ExecuteBatFileAndUpdateUI(KillerStats statsObj)
         {
-            Process proc = new Process();
+            /*Process proc = new Process();
             //oof
             proc.StartInfo.FileName = System.AppDomain.CurrentDomain.BaseDirectory + Constants.PathToRoot + "cpy.bat";
             proc.StartInfo.Arguments = Constants.PathToRoot + "settings.ini";
@@ -143,16 +146,29 @@ namespace DBDStats
             loadingicon.Visibility = Visibility.Visible;
             proc.Start();
 
-
             //listen for the process to finish running and alert the main thread to update the visibility
             proc.Exited += (sender, e) => { this.Dispatcher.Invoke(() => {
+
+            }); };
+            */
+
+            //Why not reading log file directly?
+            //Like this?
+
+            //Get DBD log folder
+            string log_path = System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            log_path += "\\AppData\\Local\\DeadByDaylight\\Saved\\Logs";
+
+            DateTime latestLog = System.IO.File.GetCreationTime(log_path + "\\DeadByDaylight.log");
+            if (newestFileRead < latestLog)
+            {
+                //Read the file
                 loadingicon.Visibility = Visibility.Hidden;
-                updateKillerStatsFromLogfiles(ref statsObj);
+                updateKillerStatsFromLogfiles(ref statsObj, log_path);
                 initUIElements(statsObj.formatData());
                 //write the new stats to file, overwriting whatever was there
                 writeKillerDataToJSON(statsObj);
-
-            }); };
+            }            
         }
 
         //Tries to load existing killer data from a JSON object and creates a new one if one doesn't already exist
@@ -206,12 +222,12 @@ namespace DBDStats
         }
         */
 
-        public void updateKillerStatsFromLogfiles(ref KillerStats statsObj)
+        public void updateKillerStatsFromLogfiles(ref KillerStats statsObj, string log_file)
         {
             //get the filenames for the log files
-            string path = Constants.PathToRoot + "data\\";
+            //string path = Constants.PathToRoot + "data\\";
             string searchPattern = "*.log";
-            string[] MyFiles = System.IO.Directory.GetFiles(path, searchPattern);
+            string[] MyFiles = System.IO.Directory.GetFiles(log_file, searchPattern);
 
             foreach(string file in MyFiles)
             {
