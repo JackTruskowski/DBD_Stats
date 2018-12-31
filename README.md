@@ -22,3 +22,13 @@ An Windows desktop application to automatically track and display stats for Dead
 
 Feel free to contribute! This is the first time I've ever worked in Visual Studio so I probably did a lot of stuff a bad way. Any pull requests are appreciated.
 
+##### Setup + Usage
+
+1. Download the ZIP of the project and unzip
+2. In Steam, create a desktop shortcut for Dead By Daylight and rename it DeadByDaylight.url (no spaces)
+3. Provide information in settings.ini
+
+   For example, the executable path might look like `C:\Users\USERNAME\Desktop\`, the data path is the path to the `Data\` directory included in this project, and the log path may look something like `C:\Users\USERNAME\AppData\Local\DeadByDaylight\Saved\Logs\DeadByDaylight.log`
+
+4. Open the project in Visual Studio and build it
+5. Launch Dead by Daylight by double clicking `RunDBD.bat`. This will first synchronize any current log files and then launch the game so that unsaved log files don't get overwritten.
