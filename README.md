@@ -5,7 +5,7 @@ An Windows desktop application to automatically track and display stats for Dead
 
 ---
 
-[screencap]: https://github.com/JackTruskowski/DBD_Stats/blob/master/Assets/Screencap.PNG "Application interface"
+![screencap]: (https://github.com/JackTruskowski/DBD_Stats/blob/master/Assets/Screencap.PNG "Application interface")
 
 ##### Current Features:
 
