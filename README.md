@@ -3,6 +3,8 @@ An Windows desktop application to automatically track and display stats for Dead
 
 *Disclaimer:  Use at your own risk. I take no responsibility if you get banned for using this application. That being said, only log files are used and they are copied over to another location for reading and manipulation, so it shouldn't be a problem.*
 
+*Disclaimer 2: This software is provided as-is. I make no guarantee that it works or will ever be finished. Enjoy!*
+
 ---
 
 ![screencap](https://github.com/JackTruskowski/DBD_Stats/blob/master/Assets/Screencap.PNG "Application interface")
